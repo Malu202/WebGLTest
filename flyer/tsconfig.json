@@ -1,0 +1,10 @@
+﻿{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "system",
+    "target": "es2015",
+    "rootDir": "Scripts/src",
+    "outFile": "Scripts/dist/out.js",
+    "types": ["babylonjs"]
+  }
+}

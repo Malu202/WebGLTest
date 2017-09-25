@@ -10,7 +10,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <TypeScriptToolsVersion>1.6</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -46,32 +46,24 @@
     <Content Include="Assets\skybox\skybox_pz.jpg" />
     <Content Include="index.html" />
     <Content Include="Assets\Molukken2.png" />
-    <Content Include="Scripts\app.js" />
-    <Content Include="Scripts\babylon.js" />
-    <Content Include="Scripts\babylon.max.js" />
-    <Content Include="Scripts\babylon.noworker.js" />
-    <Content Include="Scripts\hand.minified-1.2.js" />
-    <Content Include="Scripts\Oimo.js" />
-    <Content Include="Scripts\poly2tri.js" />
     <Content Include="testsocket.html" />
     <Content Include="web.config" />
     <Content Include="Assets\Wiese.png" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\app.ts" />
-    <TypeScriptCompile Include="Scripts\chat.ts" />
-    <TypeScriptCompile Include="Scripts\horse.ts" />
-    <TypeScriptCompile Include="Scripts\Materials\watermaterial.ts" />
-    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-resource.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-route.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-sanitize.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\babylon.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
-    <TypeScriptCompile Include="_references.ts" />
+    <None Include="Scripts\src\app.tsold" />
+    <None Include="Scripts\chat.tsold" />
+    <TypeScriptCompile Include="Scripts\src\bootstrap.ts" />
+    <TypeScriptCompile Include="Scripts\src\collisionobjects.ts" />
+    <TypeScriptCompile Include="Scripts\src\config.ts" />
+    <TypeScriptCompile Include="Scripts\src\environment\skybox.ts" />
+    <TypeScriptCompile Include="Scripts\src\environment\water.ts" />
+    <TypeScriptCompile Include="Scripts\src\game.ts" />
+    <TypeScriptCompile Include="Scripts\src\materials\water.ts" />
+    <TypeScriptCompile Include="Scripts\src\environment\reflectionable.ts" />
+    <TypeScriptCompile Include="Scripts\src\objects\obstacle.ts" />
+    <TypeScriptCompile Include="Scripts\src\objects\tree.ts" />
+    <TypeScriptCompile Include="Scripts\src\worlds\default-world.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -108,6 +100,8 @@
     <Content Include="Assets\skybox\top.xcf" />
     <None Include="Default Settings.pubxml" />
     <None Include="flyer - Web Deploy.pubxml" />
+    <Content Include="package.json" />
+    <Content Include="tsconfig.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -116,17 +110,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
@@ -202,8 +193,8 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
-    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
-    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
     <TypeScriptTarget>ES5</TypeScriptTarget>
     <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
     <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>

@@ -177,51 +177,7 @@
 
     var ilands = function () {
 
-        var canvas = document.getElementById("renderCanvas") as HTMLCanvasElement;
-        var engine = new BABYLON.Engine(canvas, true);
-        var scene = new BABYLON.Scene(engine);
-        scene.collisionsEnabled = true;
-        scene.workerCollisions = true;
-        //scene.fogMode = BABYLON.Scene.FOGMODE_LINEAR;
-        //scene.fogStart = 40.0;
-        //scene.fogEnd = 80.0;
-
-        var light = new BABYLON.PointLight("spot", new BABYLON.Vector3(10, 10, 50), scene);
-        light.diffuse = new BABYLON.Color3(1, 1, 1);
-        light.specular = new BABYLON.Color3(0, 0, 0);
-
-        var light0 = new BABYLON.HemisphericLight("Hemi0", new BABYLON.Vector3(0, 1, 0), scene);
-        light0.diffuse = new BABYLON.Color3(1, 1, 1);
-        light0.specular = new BABYLON.Color3(1, 1, 1);
-        light0.groundColor = new BABYLON.Color3(0, 0, 0);
-
-
-        var camera = new BABYLON.ArcRotateCamera("CameraBaseRotate", 1, Math.PI * 0.25, 20, new BABYLON.Vector3(0, 5, 0), scene);
-        camera.wheelPrecision = 15;
-        camera.lowerRadiusLimit = 5;
-        camera.upperRadiusLimit = 40;
-        camera.upperBetaLimit = 0.45 * Math.PI;
-        camera.maxZ = 150;
-        scene.activeCamera = camera;
-        camera.attachControl(canvas);
-
-        // Skybox
-        var skybox = BABYLON.Mesh.CreateBox("skyBox", 150, scene);
-        var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
-        skyboxMaterial.backFaceCulling = false;
-        skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("Assets/skybox/skybox", scene);
-        skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
-        skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
-        skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
-        skybox.material = skyboxMaterial;
-
-
-        BABYLON.Engine.ShadersRepository = "Assets/shader/";
-        var water = BABYLON.Mesh.CreateGround("water", 200, 200, 1, scene, false);
-        water.position.y = -3;
-        var waterMaterial = new shaders.WaterMaterial("water", scene, light);
-        water.material = waterMaterial;
-
+        
         waterMaterial.reflectionTexture.renderList.push(skybox);
 
         var collisions = new Array<BABYLON.AbstractMesh>();
@@ -233,27 +189,6 @@
             waterMaterial.refractionTexture.renderList.push(meshes[1]);
             var player = new Player(scene, "Player", camera, new KeyStateService(), new Mover([meshes[1]], collisions));
         });
-
-
-        BABYLON.SceneLoader.ImportMesh(null, "Assets/blender/", "tree.babylon", scene, (meshes, p, s) => {
-            waterMaterial.reflectionTexture.renderList.push(meshes[0]);
-            waterMaterial.reflectionTexture.renderList.push(meshes[1]);
-            waterMaterial.refractionTexture.renderList.push(meshes[0]);
-            waterMaterial.refractionTexture.renderList.push(meshes[1]);
-            meshes[0].position.x = -20;
-            meshes[0].position.z = -10;
-            collisions.push(meshes[0], meshes[1]);
-        });
-
-        engine.runRenderLoop(function () {
-            scene.render();
-        });
-
-        // Watch for browser/canvas resize events
-        window.addEventListener("resize", function () {
-            engine.resize();
-        });
-        //scene.debugLayer.show();
 
         interface Position {
             x?: number;

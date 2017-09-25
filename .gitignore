@@ -7,3 +7,7 @@
 /flyer/obj
 /packages
 /flyer.vssscc
+Default Settings.pubxml.user
+Web Deploy.pubxml.user
+/flyer/node_modules
+/flyer/Scripts/dist
