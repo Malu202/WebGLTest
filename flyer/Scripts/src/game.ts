@@ -42,6 +42,10 @@ export class Game {
         //this._scene.debugLayer.show();
     }
 
+    getScene() { return this._scene; }
+
+    getLight() { return this._light0; }
+
     animate(): void {
         this._engine.runRenderLoop(() => {
             this._scene.render();

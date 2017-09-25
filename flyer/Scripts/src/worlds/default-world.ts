@@ -4,7 +4,7 @@ import {Water} from "../environment/water"
 import {Tree} from "../objects/tree"
 import {CollisionObjects} from "../collisionobjects"
 
-export class DefaultWord {
+export class DefaultWorld {
     constructor(private _scene:Scene, private _light:Light) {
         
     }

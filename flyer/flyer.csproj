@@ -59,10 +59,14 @@
     <TypeScriptCompile Include="Scripts\src\environment\skybox.ts" />
     <TypeScriptCompile Include="Scripts\src\environment\water.ts" />
     <TypeScriptCompile Include="Scripts\src\game.ts" />
+    <TypeScriptCompile Include="Scripts\src\input\keystate.ts" />
     <TypeScriptCompile Include="Scripts\src\materials\water.ts" />
     <TypeScriptCompile Include="Scripts\src\environment\reflectionable.ts" />
+    <TypeScriptCompile Include="Scripts\src\objects\default-character.ts" />
     <TypeScriptCompile Include="Scripts\src\objects\obstacle.ts" />
+    <TypeScriptCompile Include="Scripts\src\objects\targetable.ts" />
     <TypeScriptCompile Include="Scripts\src\objects\tree.ts" />
+    <TypeScriptCompile Include="Scripts\src\player.ts" />
     <TypeScriptCompile Include="Scripts\src\worlds\default-world.ts" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +170,7 @@
     <Compile Include="WsControllers\Position\PlayerPositionController.cs" />
     <Compile Include="WsControllers\WsControllerConfig.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
   </PropertyGroup>

@@ -1,64 +1,7 @@
 ﻿module ilands {
 
-    interface IKeyState {
-        left: boolean;
-        right: boolean;
-        forward: boolean;
-        back: boolean;
-    }
-
-    interface IKeyStateService {
-        get(): IKeyState;
-    }
-
     interface IMover {
         moveWithCollisions(mesh: BABYLON.AbstractMesh, direction: BABYLON.Vector3);
-    }
-
-    class KeyStateService implements IKeyStateService {
-        constructor() {
-            var keys: IKeyState = this._keyState = { left: false, right: false, forward: false, back: false };
-
-            function handleKeyDown(evt) {
-                var tag = evt.target.tagName.toLowerCase();
-                if (tag == 'input' || tag == 'textarea')
-                    return;
-
-                if (evt.keyCode == 65) {//A
-                    keys.left = true;
-                }
-                if (evt.keyCode == 68) {//D
-                    keys.right = true;
-                }
-                if (evt.keyCode == 87) {//W
-                    keys.forward = true;
-                }
-                if (evt.keyCode == 83) {//S
-                    keys.back = true;
-                }
-            }
-
-            function handleKeyUp(evt) {
-                if (evt.keyCode == 65) {
-                    keys.left = false;
-                }
-                if (evt.keyCode == 68) {
-                    keys.right = false;
-                }
-                if (evt.keyCode == 87) {
-                    keys.forward = false;
-                }
-                if (evt.keyCode == 83) {
-                    keys.back = false;
-                }
-            }
-            window.addEventListener("keydown", handleKeyDown, false);
-            window.addEventListener("keyup", handleKeyUp, false);
-        }
-        private _keyState: IKeyState;
-        get() {
-            return this._keyState;
-        }
     }
 
     class Mover implements IMover {
@@ -103,77 +46,7 @@
         }
     }
 
-    class Player {
-
-        private _mesh: BABYLON.AbstractMesh;
-
-        constructor(private scene: BABYLON.Scene, assetName: string, camera: BABYLON.ArcRotateCamera, private keyStateService: IKeyStateService, private mover: IMover) {
-            var that = this;
-            BABYLON.SceneLoader.ImportMesh(assetName, "Assets/blender/", "player.babylon", scene, (meshes, p, s) => {
-                that._mesh = meshes[0];
-                camera.target = meshes[0];
-                scene.registerBeforeRender(this.update.bind(this));
-                that._mesh.setPhysicsState(BABYLON.PhysicsEngine.CylinderImpostor);
-            });
-        }
-
-        private _speed = 0;
-        private _turnspeed = 0;
-        private _forwards: BABYLON.Vector3;
-
-        private keyboardControl() {
-            var keys = this.keyStateService.get();
-            if (keys.forward) {
-                this._speed = 0.2;
-            }
-            else {
-                this._speed = 0;
-            }
-
-            if (keys.left) {
-                this._turnspeed = -0.05;
-            }
-            else if (keys.right) {
-                this._turnspeed = 0.05;
-            }
-            else {
-                this._turnspeed = 0;
-            }
-        }
-
-        private _animation: BABYLON.Animatable;
-
-        private update() {
-            this.keyboardControl();
-            var ratio = this.scene.getAnimationRatio();
-
-            if (this._speed) {
-                this._forwards = new BABYLON.Vector3(-Math.sin(this._mesh.rotation.y), 0, -Math.cos(this._mesh.rotation.y)).normalize();
-                this.mover.moveWithCollisions(this._mesh, this._forwards.scale(ratio * this._speed));
-                if (!this._animation) {
-                    this._animation = this.scene.beginAnimation(this._mesh.skeleton, 0, 10, true);
-                }
-            }
-            else {
-                if (this._animation) {
-                    this._animation.stop();
-                    this._animation = null;
-                }
-            }
-            if (this._turnspeed) {
-                this._mesh.rotation.y += this._turnspeed * ratio;
-            }
-
-            if ((<any>window).setPosition) {
-                (<any>window).setPosition({
-                    x: this._mesh.position.x,
-                    y: this._mesh.position.y,
-                    z: this._mesh.position.z,
-                    yaw: this._mesh.rotation.y
-                });
-            }
-        }
-    }
+   
 
     var ilands = function () {
 
