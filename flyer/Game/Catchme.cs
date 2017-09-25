@@ -84,7 +84,7 @@ namespace flyer.Game
             var x = catcher.x - catchee.x;
             var y = catcher.y - catchee.y;
             var z = catcher.z - catchee.z;
-            return Math.Sqrt(x * x + y * y + z * z) < 1;
+            return (x * x + y * y + z * z) < 1;
         }
 
         public Guid? GetCatcher()
