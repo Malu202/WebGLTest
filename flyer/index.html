@@ -1,0 +1,34 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Flyer</title>
+    <link rel="stylesheet" href="app.css" />
+    <base href="/" />
+</head>
+<body ng-app="ChatTest" ng-controller="ChatController">
+    <div class="layout">
+        <div class="content" >
+            <canvas id="renderCanvas" clickunfocus></canvas>
+        </div>
+        <div class="footer">
+            <div class="messages" scroll="messages">
+                Welcome to flyer!
+                <div ng-repeat="message in messages track by $index" >
+                    {{message.clientId}}: {{message.text}}
+                </div>
+            </div>
+            <input type="text" class="chat-input" ng-model="text" ng-keydown="send($event)" />
+        </div>
+    </div>
+    <div class="indicator" ng-cloak="" ng-if="yourTurn">
+        Du bist dran!
+    </div>
+
+    <script src="Scripts/hand.minified-1.2.js"></script>
+    <script src="Scripts/poly2tri.js"></script>
+    <script src="Scripts/oimo.js"></script>
+    <script src="Scripts/babylon.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+    <script src="Scripts/app.js"></script>
+</body>
+</html>

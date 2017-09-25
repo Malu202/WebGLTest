@@ -1,0 +1,101 @@
+	Exporter version: 3.0.5, Blender version: 2.75 (sub 0)
+========= Conversion from Blender to Babylon.js =========
+	Python World class constructor completed
+	processing begun of skeleton:  Armature, id:  0
+	processing begun of bone:  Spine.001, index:  0
+	animation begun of bone:  Spine.001
+	processing begun of bone:  Spine.002, index:  1
+	animation begun of bone:  Spine.002
+	processing begun of bone:  Hip, index:  2
+	animation begun of bone:  Hip
+	processing begun of bone:  Tail, index:  3
+	animation begun of bone:  Tail
+	processing begun of bone:  Connect Leg_B_L, index:  4
+	animation begun of bone:  Connect Leg_B_L
+	processing begun of bone:  Hip Leg_B_L, index:  5
+	animation begun of bone:  Hip Leg_B_L
+	processing begun of bone:  Upper Leg_B_L, index:  6
+	animation begun of bone:  Upper Leg_B_L
+	processing begun of bone:  Lower Leg_B_L, index:  7
+	animation begun of bone:  Lower Leg_B_L
+	processing begun of bone:  Hoofe_B_L, index:  8
+	animation begun of bone:  Hoofe_B_L
+	processing begun of bone:  Connect Leg_B_R, index:  9
+	animation begun of bone:  Connect Leg_B_R
+	processing begun of bone:  Hip Leg_B_R.001, index:  10
+	animation begun of bone:  Hip Leg_B_R.001
+	processing begun of bone:  Upper Leg_B_R, index:  11
+	animation begun of bone:  Upper Leg_B_R
+	processing begun of bone:  Lower Leg_B_R, index:  12
+	animation begun of bone:  Lower Leg_B_R
+	processing begun of bone:  Hoofe_B_R, index:  13
+	animation begun of bone:  Hoofe_B_R
+	processing begun of bone:  Breast, index:  14
+	animation begun of bone:  Breast
+	processing begun of bone:  Connect Leg_F_L, index:  15
+	animation begun of bone:  Connect Leg_F_L
+	processing begun of bone:  Hip Leg_B_L.001, index:  16
+	animation begun of bone:  Hip Leg_B_L.001
+	processing begun of bone:  Upper Leg_F_L, index:  17
+	animation begun of bone:  Upper Leg_F_L
+	processing begun of bone:  Lower Leg_F_L, index:  18
+	animation begun of bone:  Lower Leg_F_L
+	processing begun of bone:  Hoof_F_L, index:  19
+	animation begun of bone:  Hoof_F_L
+	processing begun of bone:  Connect Leg_F_R, index:  20
+	animation begun of bone:  Connect Leg_F_R
+	processing begun of bone:  Hip Leg_B_R, index:  21
+	animation begun of bone:  Hip Leg_B_R
+	processing begun of bone:  Upper Leg_F_R, index:  22
+	animation begun of bone:  Upper Leg_F_R
+	processing begun of bone:  Lower Leg_F_R, index:  23
+	animation begun of bone:  Lower Leg_F_R
+	processing begun of bone:  Hoof_F_R, index:  24
+	animation begun of bone:  Hoof_F_R
+	processing begun of bone:  Neck, index:  25
+	animation begun of bone:  Neck
+	processing begun of bone:  Head 2, index:  26
+	animation begun of bone:  Head 2
+	processing begun of bone:  Connect Ear_L, index:  27
+	animation begun of bone:  Connect Ear_L
+	processing begun of bone:  Ear_L, index:  28
+	animation begun of bone:  Ear_L
+	processing begun of bone:  Connect Eye_L, index:  29
+	animation begun of bone:  Connect Eye_L
+	processing begun of bone:  Upper Eyelid_L, index:  30
+	animation begun of bone:  Upper Eyelid_L
+	processing begun of bone:  Lower Eyelid_L, index:  31
+	animation begun of bone:  Lower Eyelid_L
+	processing begun of bone:  Connect Ear_R, index:  32
+	animation begun of bone:  Connect Ear_R
+	processing begun of bone:  Ear_R, index:  33
+	animation begun of bone:  Ear_R
+	processing begun of bone:  Connect Eye_R, index:  34
+	animation begun of bone:  Connect Eye_R
+	processing begun of bone:  Upper Eyelid_R, index:  35
+	animation begun of bone:  Upper Eyelid_R
+	processing begun of bone:  Lower Eyelid_R, index:  36
+	animation begun of bone:  Lower Eyelid_R
+	processing begun of bone:  Head, index:  37
+	animation begun of bone:  Head
+	processing complete of skeleton:  Armature
+	FCurve animation processing begun for:  Sphere
+	processing begun of mesh:  Sphere
+		processing begun of Standard material:  Eye
+		processing begun of Standard material:  Horse
+		processing begun of multimaterial:  Horse_turned.Multimaterial#0
+		WARNING: Maximum # of influencers exceeded for 15 vertices, extras ignored
+		num positions      :  64656
+		num normals        :  64656
+		num uvs            :  129312
+		num uvs2           :  0
+		num colors         :  258624
+		num indices        :  64656
+		num skeletonWeights:  258624
+		num skeletonIndices:  258624
+	processing begun of camera (FreeCamera):  Camera
+	processing begun of light (POINT):  Lamp
+========= Writing of scene file started =========
+========= Writing of scene file completed =========
+========= end of processing =========
+elapsed time:  0 min, 35.6663 secs

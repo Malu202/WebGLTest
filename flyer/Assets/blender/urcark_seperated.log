@@ -1,0 +1,26 @@
+	Exporter version: 3.0.5, Blender version: 2.75 (sub 0)
+========= Conversion from Blender to Babylon.js =========
+	Python World class constructor completed
+	processing begun of mesh:  Sand
+		processing begun of Standard material:  Material.002
+		num positions      :  216
+		num normals        :  216
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  648
+	processing begun of mesh:  Urcark
+		processing begun of Standard material:  Material.001
+		num positions      :  837
+		num normals        :  837
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  4692
+		WARNING: # of 0 area faces found:  216
+	WARNING: The following camera not visible in scene thus ignored: Camera
+	WARNING: The following lamp not visible in scene thus ignored: Lamp
+========= Writing of scene file started =========
+========= Writing of scene file completed =========
+========= end of processing =========
+elapsed time:  0 min, 0.0625 secs

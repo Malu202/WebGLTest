@@ -1,0 +1,25 @@
+	Exporter version: 3.0.5, Blender version: 2.75 (sub 0)
+========= Conversion from Blender to Babylon.js =========
+	Python World class constructor completed
+	processing begun of mesh:  Tree
+		processing begun of Standard material:  Material.001
+		num positions      :  482
+		num normals        :  482
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2880
+	processing begun of mesh:  Stem
+		processing begun of Standard material:  Tree
+		num positions      :  256
+		num normals        :  256
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1524
+	processing begun of camera (FreeCamera):  Camera
+	processing begun of light (POINT):  Lamp
+========= Writing of scene file started =========
+========= Writing of scene file completed =========
+========= end of processing =========
+elapsed time:  0 min, 0.0625 secs
